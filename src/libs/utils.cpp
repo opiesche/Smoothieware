@@ -275,3 +275,12 @@ void safe_delay_us(uint32_t dus)
         THEKERNEL->call_event(ON_IDLE);
     }
 }
+
+
+// linear interpolation between a and b
+// returns a at alpha=0.0, b at alpha=1.0
+float lerp(float a, float b, float alpha)
+{
+    alpha = std::max<float>(0.0f, std::min<float>(alpha, 1.0f));
+    return a * (1.0f-alpha) + b * alpha;
+}

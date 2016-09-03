@@ -38,6 +38,8 @@ std::string wcs2gcode(int wcs);
 void safe_delay_us(uint32_t delay);
 void safe_delay_ms(uint32_t delay);
 
+float lerp(float a, float b, float alpha);
+
 #define confine(value, min, max) (((value) < (min))?(min):(((value) > (max))?(max):(value)))
 
 //#define dd(...) LPC_GPIO2->FIODIR = 0xffff; LPC_GPIO2->FIOCLR = 0xffff; LPC_GPIO2->FIOSET = __VA_ARGS__
